@@ -1,8 +1,16 @@
 class Menu
-    def instance
-    
+    def initialize
+    @menu = {
+        "chips" => 2,
+    }
+    end
+    def the_menu
+        return @menu
     end
     def show_menu
-        return "chips 2"
+        the_menu.each do |key , value|
+            return "#{key} #{value}"
+         end
+         
     end
 end
