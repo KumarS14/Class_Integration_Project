@@ -1,8 +1,8 @@
 class Order 
-    def initialize(order)
-        @order = order
+    def initialize
+        @order = []
     end
-    def show_order
-        return @order
+    def show_order(order)
+        @order.push(order).join
     end
 end 
