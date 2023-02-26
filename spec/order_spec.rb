@@ -26,6 +26,7 @@ RSpec.describe Order do
             orders.to_order("mac and cheese")
             expect(orders.show_order).to eq "burger, chips, kebab, mac and cheese"
         end
+        
 
     end
 end
