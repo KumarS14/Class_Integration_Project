@@ -1,8 +1,10 @@
 class Menu
     def initialize
     @menu = [
-        "chips" => 2,
+        "chips" =>  2,
         "burger" => 4,
+        "kebab" => 5.75,
+        "mac and cheese" => 4.47
     ]
     end
     def the_menu
@@ -10,7 +12,7 @@ class Menu
     end
     def show_menu
          the_menu.each do |key|
-           puts "#{key}" 
+           print "#{key}" 
          end
          
     end
