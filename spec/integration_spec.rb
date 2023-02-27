@@ -66,6 +66,19 @@ RSpec.describe "Integration" do
         order.to_order("mac and cheese")
         expect(order.show_order).to eq "burger, chips, kebab, mac and cheese"
     end
+   
+    it "fails as item does not exist" do
+        order = Order.new
+        menu = Menu.new([
+            {"chips" =>  2},
+            {"burger" => 4},
+            {"kebab" => 5.75},
+            {"mac and cheese" => 4.47}
+        ])
+        order.all(menu)
+        order.to_order("pizza")
+        expect {order.show_order}.to Failure/Error {KeyError "This item does not exit" if key.fetch(order) == false}
+    end
     it "tests to see if price is returned" do
         order = Order.new
         menu = Menu.new({
