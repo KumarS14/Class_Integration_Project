@@ -89,6 +89,21 @@ RSpec.describe "Integration" do
         }
         )
         order.all(menu)
+        order.to_order("burger")
         expect(order.price).to eq 4
+    end
+    it "tests to see if price of burger and mac and cheese is returned" do
+        order = Order.new
+        menu = Menu.new({
+            "chips" =>  2,
+            "burger" => 4,
+            "kebab" => 5.75,
+            "mac and cheese" => 4.47
+        }
+        )
+        order.all(menu)
+        order.to_order("burger")
+        order.to_order("mac and cheese")
+        expect(order.price).to eq 8.47
     end
 end
