@@ -19,18 +19,18 @@ class Order
             @order.push(order) if key.fetch(order) 
         end
     end
-    def price
+    def show_order
+        return @order.join(", ")
+    end
+    def recipt
         price = []
        show_menu.each do | key,value|
             @order.each do |item|
             price.push(key[item])
            end
        end
-       return price.sum.round(2)
+       return "You have ordered #{show_order} with the total cost being #{price.sum.round(2)}"
         
     end
 
-    def show_order
-        return @order.join(", ")
-    end
 end 
