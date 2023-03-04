@@ -90,7 +90,7 @@ RSpec.describe "Integration" do
         )
         order.all(menu)
         order.to_order("burger")
-        expect(order.price).to eq 4
+        expect(order.recipt).to eq "You have ordered burger with the total cost being 4"
     end
     it "tests to see if price of burger and mac and cheese is returned" do
         order = Order.new
@@ -104,7 +104,7 @@ RSpec.describe "Integration" do
         order.all(menu)
         order.to_order("burger")
         order.to_order("mac and cheese")
-        expect(order.price).to eq 8.47
+        expect(order.recipt).to eq "You have ordered burger, mac and cheese with the total cost being 8.47"
     end
     it "tests to see if price of burger and kebab is returned" do
         order = Order.new
@@ -118,6 +118,6 @@ RSpec.describe "Integration" do
         order.all(menu)
         order.to_order("burger")
         order.to_order("kebab")
-        expect(order.price).to eq 9.75
+        expect(order.recipt).to eq "You have ordered burger, kebab with the total cost being 9.75"
     end
 end
